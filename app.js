@@ -5,6 +5,7 @@ import taskRouter from "./routes/task.js";
 
 import { config } from "dotenv"
 import cookieParser from "cookie-parser";
+import { errorMiddleware } from "./middlewares/error.js";
 
 
 
@@ -36,3 +37,9 @@ app.get("/" , (req,res)=>(
 
 
 
+// --------error handler------------------------------
+// jun hum kese function me next ko call krenge while passing error to sara program band ho jayega
+// or ye wala error handler chelaga
+
+// using error middleware
+app.use(errorMiddleware)
