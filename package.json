@@ -4,6 +4,9 @@
   "private": true,
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": ">=14.20.1"
+  },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
     "@chakra-ui/theme": "^3.0.1",
