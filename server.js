@@ -6,5 +6,5 @@ connectDB();
 
 
 app.listen(process.env.PORT,()=>(
-    console.log("Shree Hare Radhe")
+    console.log(`Shree Hare Radhe on port:${process.env.PORT} in ${process.env.NODE_ENV} Mode`)
 ))

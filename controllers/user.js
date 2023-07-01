@@ -139,7 +139,10 @@ if(!user)
 // 2
 export const logout = ( req , res ) =>{
 
-  res.status(200).clearCookie("token").json({
+  res.status(200).clearCookie("token" , 
+  { sameSite:process.env.NODE_ENV === "Development" ? "lax" : "none",
+    secure:process.env.NODE_ENV === "Development" ? false : true, }
+  ).json({
       success:true,
       user: req.user,
     });
