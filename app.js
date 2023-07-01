@@ -7,6 +7,10 @@ import { config } from "dotenv"
 import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
 
+// backend or frontend ka url alalg alag hota hai esliye cors import keya
+import cors from "cors";
+
+
 
 
 export const app = express();
@@ -19,6 +23,12 @@ config({
 
 app.use(express.json()); // to send json data 
 app.use(cookieParser());
+
+app.use(cors({
+    origin: [process.env.FRONTEND_URL],
+    methods:["GET","POST" , "PUT" , "DELETE"],
+    credentials: true,
+}))
 
 // -----------------------------------------------------------------------------//
 
